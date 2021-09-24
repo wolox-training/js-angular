@@ -23,6 +23,9 @@
     "paths": {
       "@sign/*": [
         "src/app/screens/sign/*"
+      ],
+      "@components/*": [
+        "src/app/components/*"
       ]
     }
   },
