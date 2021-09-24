@@ -15,11 +15,11 @@ export class SignControlsComponent {
   @Output() toggleForm: EventEmitter<void> = new EventEmitter<void>()
 
   get sign(): string {
-    return !this.isSignin ? 'login' : 'sign up'
+    return this.isSignin ? 'login' : 'sign up'
   }
 
   get back(): string {
-    return this.isSignin ? 'login' : 'sign up'
+    return !this.isSignin ? 'login' : 'sign up'
   }
 
   private get isSignin() {

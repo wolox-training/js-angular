@@ -1,4 +1,4 @@
-<form class="form">
+<form class="form" [formGroup]="formSignIn" (ngSubmit)="onSubmit()">
   <div class="form-row">
     <label class="label text-capitalize">email</label>
     <input type="text" class="input  input-block">
