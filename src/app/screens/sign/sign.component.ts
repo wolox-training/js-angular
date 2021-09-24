@@ -22,5 +22,4 @@ export class SignComponent {
   public changeTypeForm() {
     this.typeForm = this.typeForm === SIGN_IN ? SIGN_UP : SIGN_IN;
   }
-
 }
