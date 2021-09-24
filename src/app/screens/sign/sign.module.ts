@@ -7,6 +7,9 @@ import { DirectivesModule } from '@directives/directives.module';
 import { MessageErrorModule } from '@components/message-error/message-error.module';
 import { CompanyNameModule } from '@components/company-name/company-name.module';
 
+/* External Modules Services */
+import { UserServiceModule } from '@services/user/user.service.module';
+
 /* Routing */
 import { SignRoutingModule } from '@sign/sign-routing.module';
 
@@ -33,6 +36,8 @@ import { SignContainerComponent } from '@sign/components/sign-container/sign-con
     DirectivesModule,
     MessageErrorModule,
     CompanyNameModule,
+    /* External Modules Services */
+    UserServiceModule,
   ]
 })
 export class SignModule { }
