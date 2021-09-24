@@ -1,0 +1,15 @@
+@import 'colors';
+
+.container-register {
+  height: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.register-wolox {
+  border-top: 10px solid $blue-sky;
+  color: $gray-light;
+  display: inline-block;
+  max-width: 100%;
+  width: 400px;
+}

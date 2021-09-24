@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'wolox-sign',
+  selector: 'wx-sign',
   templateUrl: './sign.component.html',
   styleUrls: ['./sign.component.scss']
 })
