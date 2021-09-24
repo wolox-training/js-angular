@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/* External modules */
+import { ComponentsModule } from '@components/components.module';
+
 /* Routing */
 import { SignRoutingModule } from '@sign/sign-routing.module'
 
@@ -18,6 +21,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
   imports: [
     CommonModule,
     SignRoutingModule,
+    ComponentsModule,
   ]
 })
 export class SignModule { }
