@@ -1,5 +1,10 @@
 <div class="container-register">
-  <div class="register-wolox">
-    <wlx-company-name></wlx-company-name>
-  </div>
+  <wlx-sign-container [ngSwitch]="typeSign">
+    <wlx-sign-in *ngSwitchCase="SIGN_IN">
+      <wlx-sign-controls buttons [type]="typeSign" (toggleForm)="changeTypeForm()"></wlx-sign-controls>
+    </wlx-sign-in>
+    <wlx-sign-up *ngSwitchCase="SIGN_UP">
+      <wlx-sign-controls buttons [type]="typeSign" (toggleForm)="changeTypeForm()"></wlx-sign-controls>
+    </wlx-sign-up>
+  </wlx-sign-container>
 </div>
