@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 @import 'variables/colors';
 @import 'variables/font-types';
+=======
+@import 'colors';
+>>>>>>> 28d74a3 (components shared module and component title company)
 
 .company-name {
   color: $equalizer-black;
   font-size: 2rem;
+<<<<<<< HEAD
   font-weight: $semi-bold;
+=======
+  font-weight: 600;
+>>>>>>> 28d74a3 (components shared module and component title company)
   letter-spacing: 10px;
   padding: 1rem 0.4rem;
   text-transform: uppercase;
