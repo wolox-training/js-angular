@@ -1,0 +1,15 @@
+@import 'variables/colors';
+
+.btn-back {
+  margin-top: 2rem;
+  position: relative;
+
+  &::before {
+    border-bottom: 1px solid $equalizer-black;
+    bottom: calc(100% + 1rem);
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

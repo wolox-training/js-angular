@@ -1,4 +1,6 @@
 @import 'variables/colors';
+@import 'variables/font-types';
+@import 'variables/font-sizes';
 
 .container-register {
   height: 100%;
@@ -6,10 +8,12 @@
   padding: 1rem;
 }
 
-.register-wolox {
-  background: $gray-light;
-  border-top: 10px solid $blue-sky;
-  display: inline-block;
-  max-width: 100%;
-  width: 400px;
+.form {
+  padding: 1rem;
+  text-align: left;
+  .label {
+    padding: 0.8rem 0;
+    font-weight: $semi-bold;
+    font-size: $font-size-medium;
+  }
 }

@@ -3,7 +3,7 @@
 
 .company-name {
   color: $equalizer-black;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: $semi-bold;
   letter-spacing: 10px;
   padding: 1rem 0.4rem;
@@ -13,10 +13,11 @@
     font-size: inherit;
   } 
 
-  .ltr-blue {
-    color: $blue-sky;
-  }
   .ltr-green {
     color: $green;
+  }
+  
+  .ltr-blue {
+    color: $blue-sky;
   }
 }

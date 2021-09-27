@@ -1,0 +1,11 @@
+.input  {
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1;
+  padding: 0.6rem;
+
+  &.input-block {
+    display: block;
+    width: 100%;
+  }
+}
