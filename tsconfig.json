@@ -32,6 +32,9 @@
       ],
       "@validations/*": [
         "src/app/validations/*"
+      ],
+      "@constants/*": [
+        "src/app/constants/*"
       ]
     }
   },

@@ -1,11 +1,15 @@
 <form class="form" [formGroup]="formSignIn" (ngSubmit)="onSubmit()">
   <div class="form-row">
     <label class="label text-capitalize">email</label>
-    <input type="text" class="input  input-block">
+    <input type="text" formControlName="email" class="input input-block">
+    <wlx-message-error [control]="getControl('email')" [messages]="messages.email">
+    </wlx-message-error>
   </div>
   <div class="form-row">
     <label class="label text-capitalize">password</label>
-    <input type="password" class="input  input-block">
+    <input type="password" formControlName="password" class="input input-block">
+    <wlx-message-error [control]="getControl('password')" [messages]="messages.password">
+    </wlx-message-error>
   </div>
   <ng-content select="[buttons]"></ng-content>
 </form>
