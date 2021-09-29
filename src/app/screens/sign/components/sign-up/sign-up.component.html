@@ -1,14 +1,14 @@
 <form class="form" [formGroup]="formSignUp" (ngSubmit)="onSubmit()">
   <div class="form-row">
     <label class="label text-capitalize">nombre</label>
-    <input type="text" formControlName="name" class="input input-block">
-    <wlx-message-error [control]="getControl('name')" [messages]="messages.name">
+    <input type="text" formControlName="first_name" class="input input-block">
+    <wlx-message-error [control]="getControl('first_name')" [messages]="messages.first_name">
     </wlx-message-error>
   </div>
   <div class="form-row">
     <label class="label text-capitalize">apellido</label>
-    <input type="text" formControlName="lastName" class="input input-block">
-    <wlx-message-error [control]="getControl('lastName')" [messages]="messages.lastName">
+    <input type="text" formControlName="last_name" class="input input-block">
+    <wlx-message-error [control]="getControl('last_name')" [messages]="messages.last_name">
     </wlx-message-error>
   </div>
   <div class="form-row">

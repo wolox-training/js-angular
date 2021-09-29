@@ -35,6 +35,12 @@
       ],
       "@constants/*": [
         "src/app/constants/*"
+      ],
+      "@services/*": [
+        "src/app/services/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
       ]
     }
   },

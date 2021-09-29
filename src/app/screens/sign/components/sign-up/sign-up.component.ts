@@ -1,18 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+/* Validations */
 import { matcher } from '@validations/matcher.validation';
 import { PASSWORD } from '@constants/regexp/validations.regexp';
-import { MessagesValidtions } from '@sign/types/sign.type';
+
+/* Constants */
 import { emailMessage, patternMessage, requiredMessage } from '@sign/constants/message-validations.constant';
+
+/* Types */
+import { MessagesValidtions } from '@sign/types/sign.type';
+
+/* Services */
+import { UserService } from '@services/user/user.service';
 
 const MESSAGES = {
   email: {
     ...requiredMessage,
     ...emailMessage,
-    maxlength: 'No puede ser mas de 8'
   },
-  lastName: requiredMessage,
-  name: requiredMessage,
+  last_name: requiredMessage,
+  first_name: requiredMessage,
   password: {
     ...requiredMessage,
     ...patternMessage('este campo requiere al menos un letra mayuscula y un numero')
@@ -34,6 +42,8 @@ export class SignUpComponent implements OnInit {
   public formSignUp!: FormGroup;
   constructor(
     private readonly fb: FormBuilder,
+    /* Services */
+    private readonly userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -48,19 +58,19 @@ export class SignUpComponent implements OnInit {
     if (this.formSignUp.invalid) {
       this.formSignUp.markAllAsTouched()
     } else {
-      const value = this.formSignUp.value
-      console.log(value)
+      const newUser = this.formSignUp.value
+      this.userService.create(newUser).subscribe(console.log)
     }
   }
 
   private buildSignUpForm(): void {
     this.formSignUp = this.fb.group({
-      email: this.fb.control('', Validators.compose([Validators.required, Validators.email, Validators.maxLength(8)])),
-      lastName: this.fb.control('', Validators.required),
-      name: this.fb.control('', Validators.required),
+      email: this.fb.control('', Validators.compose([Validators.required, Validators.email])),
+      first_name: this.fb.control('', Validators.required),
+      last_name: this.fb.control('', Validators.required),
+      locale: 'en',
       password: this.fb.control('', Validators.compose([Validators.required, Validators.pattern(PASSWORD)])),
       password_confirm: this.fb.control('', Validators.required),
-      locale: 'en',
     }, {
       validator: matcher('password', 'password_confirm')
     })
