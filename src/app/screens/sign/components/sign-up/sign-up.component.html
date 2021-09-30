@@ -1,31 +1,33 @@
-<form class="form" [formGroup]="formSignUp" (ngSubmit)="onSubmit()">
+<form role="form" class="form" [formGroup]="formSignUp" (ngSubmit)="onSubmit()">
   <div class="form-row">
     <label class="label text-capitalize">nombre</label>
-    <input type="text" formControlName="first_name" class="input input-block">
+    <input type="text" title="nombre" formControlName="first_name" class="input input-block">
     <wlx-message-error [control]="getControl('first_name')" [messages]="messages.first_name">
     </wlx-message-error>
   </div>
   <div class="form-row">
     <label class="label text-capitalize">apellido</label>
-    <input type="text" formControlName="last_name" class="input input-block">
+    <input type="text" title="apellido" formControlName="last_name" class="input input-block">
     <wlx-message-error [control]="getControl('last_name')" [messages]="messages.last_name">
     </wlx-message-error>
   </div>
   <div class="form-row">
     <label class="label text-capitalize">email</label>
-    <input type="text" formControlName="email" class="input input-block">
+    <input type="text" title="email" formControlName="email" class="input input-block">
     <wlx-message-error [control]="getControl('email')" [messages]="messages.email">
     </wlx-message-error>
   </div>
   <div class="form-row">
+
     <label class="label text-capitalize">password</label>
-    <input type="password" formControlName="password" class="input input-block">
+    <input type="password" title="password" formControlName="password" class="input input-block">
     <wlx-message-error [control]="getControl('password')" [messages]="messages.password">
     </wlx-message-error>
   </div>
   <div class="form-row">
     <label class="label text-capitalize">confirmación de password</label>
-    <input type="password" wlxBlockCutCopyPaste formControlName="password_confirm" class="input input-block">
+    <input type="password" title="password_confirm" wlxBlockCutCopyPaste formControlName="password_confirm"
+      class="input input-block">
     <wlx-message-error [control]="getControl('password_confirm')" [errorsForm]="formSignUp.errors"
       [messages]="messages.password_confirm">
     </wlx-message-error>
