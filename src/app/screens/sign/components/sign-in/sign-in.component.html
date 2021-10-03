@@ -12,4 +12,7 @@
     </wlx-message-error>
   </div>
   <ng-content select="[buttons]"></ng-content>
+  <div [hidden]="!showErrorMessage">
+    Credenciales incorrectas
+  </div>
 </form>

@@ -9,6 +9,7 @@ import { CompanyNameModule } from '@components/company-name/company-name.module'
 
 /* External Modules Services */
 import { UserServiceModule } from '@services/user/user.service.module';
+import { StorageModule } from '@services/storage/storage.module';
 
 /* Routing */
 import { SignRoutingModule } from '@sign/sign-routing.module';
@@ -38,6 +39,7 @@ import { SignContainerComponent } from '@sign/components/sign-container/sign-con
     CompanyNameModule,
     /* External Modules Services */
     UserServiceModule,
+    StorageModule,
   ]
 })
 export class SignModule { }
