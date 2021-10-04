@@ -7,11 +7,12 @@ import {
   HttpResponse
 } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { filter, map, tap, } from 'rxjs/operators';
+import { iif, Observable, of } from 'rxjs';
+import { filter, map, mergeMap, tap, } from 'rxjs/operators';
 
 /* Constants */
 import { KEYS_STORAGE } from '@constants/storageKeys';
+import { API_SIGN_IN } from '@services/user/user.endpoints';
 
 /* External services */
 import { StorageService } from '@services/storage/storage.service';
@@ -30,14 +31,24 @@ export class LoginInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
-      filter((event: HttpEvent<any>) => event instanceof HttpResponse),
+      mergeMap((event: HttpEvent<any>) => {
+        return iif(() => request.url.includes(API_SIGN_IN), this.mapperLogin(event), of(event))
+      })
+    )
+  }
+
+  private mapperLogin(httpEvent: HttpEvent<any>): Observable<HttpResponse<any>> {
+    return of(httpEvent).pipe(
+      filter((event: HttpEvent<any>) => {
+        return event instanceof HttpResponse
+      }),
       map((event: HttpEvent<any>) => event as HttpResponse<any>),
       map((event: HttpResponse<any>) => {
-        const newBody = this.buildPayloadResponse(event.body)
-        return event.clone({ body: newBody })
+        const newBody = this.buildPayloadResponse(event.body);
+        return event.clone({ body: newBody });
       }),
       tap((event: HttpResponse<any>) => {
-        this.storageService.localSetItem(KEYS_STORAGE.LOCALSTORAGE.access_token, event.headers.get(this.authHeader))
+        this.storageService.localSetItem(KEYS_STORAGE.access_token, event.headers.get(this.authHeader))
       })
     )
   }

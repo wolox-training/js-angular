@@ -18,13 +18,6 @@ import { LoginInterceptor } from '@sign/interceptors/login/login.interceptor';
   selector: 'wlx-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss', '../../sign.component.scss'],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoginInterceptor,
-      multi: true
-    }
-  ],
 })
 export class SignInComponent implements OnInit, OnDestroy {
 
@@ -72,9 +65,10 @@ export class SignInComponent implements OnInit, OnDestroy {
           })
         ).subscribe((res: UserLoginResponse) => {
           console.log(res)
-          // redirect routes
-          //this.router.navigateByUrl('/books')
-        }, () => {
+          //redirect routes
+          this.router.navigateByUrl('/books')
+        }, (err) => {
+          console.log(err)
           this.showErrorMessage = true;
           const timeToHidden = 3000
           timer(timeToHidden).pipe(

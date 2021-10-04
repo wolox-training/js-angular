@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 /* External modules */
 import { DirectivesModule } from '@directives/directives.module';
@@ -10,6 +11,9 @@ import { CompanyNameModule } from '@components/company-name/company-name.module'
 /* External Modules Services */
 import { UserServiceModule } from '@services/user/user.service.module';
 import { StorageModule } from '@services/storage/storage.module';
+
+/* Interceptors */
+import { LoginInterceptor } from './interceptors/login/login.interceptor';
 
 /* Routing */
 import { SignRoutingModule } from '@sign/sign-routing.module';
@@ -28,6 +32,13 @@ import { SignContainerComponent } from '@sign/components/sign-container/sign-con
     SignInComponent,
     SignControlsComponent,
     SignContainerComponent,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoginInterceptor,
+      multi: true
+    }
   ],
   imports: [
     CommonModule,

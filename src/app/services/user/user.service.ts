@@ -36,6 +36,7 @@ export class UserService {
     return this.http.post<ResponseLogin>(API_SIGN_IN, user)
       .pipe(
         map((res: ResponseLogin) => {
+          console.log('res', res)
           if (!res.success) {
             throw new Error('no login')
           }
