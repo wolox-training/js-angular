@@ -32,3 +32,25 @@ export interface ResponseUserPost {
   data: UserResponse;
   errors: Errors;
 }
+
+export interface UserLogin {
+  email: string
+  password: string
+}
+
+export interface ResponseLogin {
+  success: boolean;
+  errors: string[];
+  data: UserLoginResponse;
+}
+
+export interface UserLoginResponse {
+  id: number;
+  email: string;
+  provider: string;
+  uid: string;
+  allow_password_change: boolean;
+  first_name: string;
+  last_name: string;
+  locale: string;
+}
