@@ -33,7 +33,7 @@ export class StorageService {
         return JSON.parse(item)
       }
       return null
-    } catch (e) {
+    } catch {
       return null
     }
   }

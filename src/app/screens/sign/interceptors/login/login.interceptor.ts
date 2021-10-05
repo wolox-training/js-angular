@@ -10,13 +10,19 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map, tap, } from 'rxjs/operators';
 
+/* Constants */
+import { KEYS_STORAGE } from '@constants/storageKeys';
+
 /* External services */
 import { StorageService } from '@services/storage/storage.service';
+
+/* Tyeps */
 import { ResponseLogin } from '@services/user/user.types';
 
 @Injectable()
 export class LoginInterceptor implements HttpInterceptor {
 
+  private readonly authHeader: string = 'Access-Token'
   constructor(
     public readonly router: Router,
     public readonly storageService: StorageService
@@ -31,7 +37,7 @@ export class LoginInterceptor implements HttpInterceptor {
         return event.clone({ body: newBody })
       }),
       tap((event: HttpResponse<any>) => {
-        this.storageService.localSetItem('access_token', event.headers.get('Access-Token'))
+        this.storageService.localSetItem(KEYS_STORAGE.LOCALSTORAGE.access_token, event.headers.get(this.authHeader))
       })
     )
   }

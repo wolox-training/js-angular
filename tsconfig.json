@@ -39,9 +39,12 @@
       "@services/*": [
         "src/app/services/*"
       ],
+      "@guards/*": [
+        "src/app/guards/*"
+      ],
       "@environments/*": [
         "src/environments/*"
-      ]
+      ],
     }
   },
   "angularCompilerOptions": {
