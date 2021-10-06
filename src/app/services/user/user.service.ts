@@ -3,10 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-/* Modules */
+/* External Modules */
 import { UserServiceModule } from '@services/user/user.service.module';
+
 /* Types */
 import { ResponseUserPost, UserResponse, UserToCreate, UserLogin, UserLoginResponse, ResponseLogin } from '@services/user/user.types';
+
 /* End points */
 import { API_SIGN_UP, API_SIGN_IN } from '@services/user/user.endpoints';
 

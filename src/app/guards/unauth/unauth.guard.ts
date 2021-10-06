@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanLoad, Router } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 
 import { UnauthGuardModule } from './unauth.guard.module';
 
@@ -13,23 +13,23 @@ import { StorageService } from '@services/storage/storage.service';
 @Injectable({
   providedIn: UnauthGuardModule
 })
-export class UnauthGuard implements CanLoad {
+export class UnauthGuard implements CanActivate {
 
   constructor(
     private readonly router: Router,
     public readonly storageService: StorageService
   ) { }
 
-  canLoad() {
+  canActivate() {
     if (this.isAuth()) {
       //Redirect to route books
       //this.router.navigateByUrl(ROUTE_BOOKS)
-      return true
+      return false;
     }
     return true;
   }
 
   private isAuth(): boolean {
-    return Boolean(this.storageService.localGetItem(KEYS_STORAGE.LOCALSTORAGE.access_token))
+    return Boolean(this.storageService.localGetItem(KEYS_STORAGE.access_token))
   }
 }

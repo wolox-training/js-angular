@@ -27,6 +27,6 @@ export class AuthGuard implements CanLoad {
   }
 
   private isAuth(): boolean {
-    return Boolean(this.storageService.localGetItem(KEYS_STORAGE.LOCALSTORAGE.access_token))
+    return Boolean(this.storageService.localGetItem(KEYS_STORAGE.access_token))
   }
 }

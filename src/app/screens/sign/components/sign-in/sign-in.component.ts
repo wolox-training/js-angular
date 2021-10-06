@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Subject, timer } from 'rxjs';
 import { takeUntil, finalize } from 'rxjs/operators';
 
@@ -10,21 +9,11 @@ import { MessagesValidtions } from '@sign/types/sign.type';
 import { Router } from '@angular/router';
 import { UserLoginResponse } from '@services/user/user.types';
 
-/* Interceptors */
-import { LoginInterceptor } from '@sign/interceptors/login/login.interceptor';
-
 
 @Component({
   selector: 'wlx-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss', '../../sign.component.scss'],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoginInterceptor,
-      multi: true
-    }
-  ],
 })
 export class SignInComponent implements OnInit, OnDestroy {
 

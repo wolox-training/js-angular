@@ -22,6 +22,10 @@ export class StorageService {
     }
   }
 
+  public localRemoveItem(key: string): void {
+    localStorage.removeItem(key)
+  }
+
   public sessionSetItem<T>(key: string, item: T): void {
     sessionStorage.setItem(key, JSON.stringify(item))
   }
@@ -36,6 +40,10 @@ export class StorageService {
     } catch {
       return null
     }
+  }
+
+  public sessionRemoveItem(key: string): void {
+    sessionStorage.removeItem(key)
   }
 
 }
