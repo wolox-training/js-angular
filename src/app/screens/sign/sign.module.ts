@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 /* External modules */
 import { DirectivesModule } from '@directives/directives.module';
@@ -21,6 +22,9 @@ import { SignInComponent } from '@sign/components/sign-in/sign-in.component';
 import { SignControlsComponent } from '@sign/components/sign-controls/sign-controls.component';
 import { SignContainerComponent } from '@sign/components/sign-container/sign-container.component';
 
+/* Interceptors */
+import { LoginInterceptor } from '@sign/interceptors/login/login.interceptor';
+
 @NgModule({
   declarations: [
     SignComponent,
@@ -28,6 +32,13 @@ import { SignContainerComponent } from '@sign/components/sign-container/sign-con
     SignInComponent,
     SignControlsComponent,
     SignContainerComponent,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoginInterceptor,
+      multi: true
+    }
   ],
   imports: [
     CommonModule,
