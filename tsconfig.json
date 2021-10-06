@@ -24,6 +24,9 @@
       "@sign/*": [
         "src/app/screens/sign/*"
       ],
+      "@books/*": [
+        "src/app/screens/books/*"
+      ],
       "@components/*": [
         "src/app/components/*"
       ],
