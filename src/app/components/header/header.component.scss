@@ -1,0 +1,8 @@
+@import 'variables/colors';
+
+.header {
+  align-items: center;
+  border-top: 4px solid $blue-sky;
+  display: flex;
+  justify-content: space-between;
+}

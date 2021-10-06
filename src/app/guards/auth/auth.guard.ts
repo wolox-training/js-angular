@@ -3,7 +3,7 @@ import { CanLoad, Router } from '@angular/router';
 import { AuthGuardModule } from '@guards/auth/auth.guard.module';
 
 /* Constants */
-import { ROUTE_ROOT } from '@constants/routes';
+import { ROUTE_ROOT, buildRedirectRoute } from '@constants/routes';
 import { KEYS_STORAGE } from '@constants/storageKeys';
 
 /* External services */
@@ -22,7 +22,7 @@ export class AuthGuard implements CanLoad {
     if (this.isAuth()) {
       return true
     }
-    this.router.navigateByUrl(ROUTE_ROOT)
+    this.router.navigateByUrl(buildRedirectRoute(ROUTE_ROOT))
     return false;
   }
 

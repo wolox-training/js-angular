@@ -8,6 +8,7 @@ import { emailMessage, requiredMessage } from '@sign/constants/message-validatio
 import { MessagesValidtions } from '@sign/types/sign.type';
 import { Router } from '@angular/router';
 import { UserLoginResponse } from '@services/user/user.types';
+import { buildRedirectRoute, ROUTE_BOOKS } from '@constants/routes';
 
 
 @Component({
@@ -59,10 +60,9 @@ export class SignInComponent implements OnInit, OnDestroy {
           finalize(() => {
             this.isLogin = false
           })
-        ).subscribe((res: UserLoginResponse) => {
-          console.log(res)
+        ).subscribe(() => {
           // redirect routes
-          //this.router.navigateByUrl('/books')
+          this.router.navigateByUrl(buildRedirectRoute(ROUTE_BOOKS))
         }, () => {
           this.showErrorMessage = true;
           const timeToHidden = 3000

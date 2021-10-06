@@ -4,7 +4,7 @@ import { CanActivate, Router } from '@angular/router';
 import { UnauthGuardModule } from './unauth.guard.module';
 
 /* Constants */
-import { ROUTE_BOOKS } from '@constants/routes';
+import { ROUTE_BOOKS, buildRedirectRoute } from '@constants/routes';
 import { KEYS_STORAGE } from '@constants/storageKeys';
 
 /* External services */
@@ -23,7 +23,7 @@ export class UnauthGuard implements CanActivate {
   canActivate() {
     if (this.isAuth()) {
       //Redirect to route books
-      //this.router.navigateByUrl(ROUTE_BOOKS)
+      this.router.navigateByUrl(buildRedirectRoute(ROUTE_BOOKS))
       return false;
     }
     return true;
