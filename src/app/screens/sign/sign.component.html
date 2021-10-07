@@ -1,10 +1,4 @@
 <div class="container-register">
-  <wlx-sign-container [ngSwitch]="typeSign">
-    <wlx-sign-in *ngSwitchCase="SIGN_IN">
-      <wlx-sign-controls buttons [type]="typeSign" (toggleForm)="changeTypeForm()"></wlx-sign-controls>
-    </wlx-sign-in>
-    <wlx-sign-up *ngSwitchCase="SIGN_UP">
-      <wlx-sign-controls buttons [type]="typeSign" (toggleForm)="changeTypeForm()"></wlx-sign-controls>
-    </wlx-sign-up>
+  <wlx-sign-container>
   </wlx-sign-container>
 </div>

@@ -7,7 +7,6 @@ import { UserService } from '@services/user/user.service';
 import { emailMessage, requiredMessage } from '@sign/constants/message-validations.constant';
 import { MessagesValidtions } from '@sign/types/sign.type';
 import { Router } from '@angular/router';
-import { UserLoginResponse } from '@services/user/user.types';
 import { buildRedirectRoute, ROUTE_BOOKS } from '@constants/routes';
 
 @Component({
