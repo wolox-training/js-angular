@@ -8,13 +8,16 @@ import { HeaderModule } from '@components/header/header.module';
 import { FilterPipeModule } from '@pipes/filter/filter.pipe.module';
 
 /* Routing module */
-import { BooksRoutingModule } from '@books/books-routing.module';
+import { BooksRoutingModule } from './books-routing.module';
+/* Components */
+import { HeaderComponent } from '@components/header/header.component';
 
 /* Components */
 import { BookComponent } from '@books/components/book/book.component';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     ...BooksRoutingModule.componentsUsingRouting,
     BookComponent
   ],

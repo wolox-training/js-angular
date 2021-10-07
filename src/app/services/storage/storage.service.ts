@@ -45,5 +45,4 @@ export class StorageService {
   public sessionRemoveItem(key: string): void {
     sessionStorage.removeItem(key)
   }
-
 }

@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 import { UserLoginResponse } from '@services/user/user.types';
 import { buildRedirectRoute, ROUTE_BOOKS } from '@constants/routes';
 
-
 @Component({
   selector: 'wlx-sign-in',
   templateUrl: './sign-in.component.html',
