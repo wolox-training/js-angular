@@ -1,11 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+/* Components */
 import { BooksComponent } from './books.component';
+
+/* Constants */
+import { ROUTE_ROOT } from '@constants/routes';
+
+/* Resolvers */
+import { BooksResolver } from './resolvers/books/books.resolver';
 
 const routes: Routes = [
   {
-    path: '',
-    component: BooksComponent
+    path: ROUTE_ROOT,
+    component: BooksComponent,
+    resolve: {
+      books: BooksResolver
+    },
+    runGuardsAndResolvers: 'always',
   }
 ];
 
