@@ -20,4 +20,10 @@ button {
     border-color: $green;
     color: $green;
   }
+  
+  &.btn-transparent {
+    color: inherit;
+    background-color: transparent;
+    border: none;
+  }
 }
