@@ -1,5 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
+/* Constants */
 import { SIGN_IN, SIGN_UP } from '@sign/constants/types.constant';
+import { ROUTE_SIGNUP, ROUTE_LOGIN, buildRedirectRoute } from '@constants/routes';
 
 /* types */
 import { sign } from '@sign/types/sign.type';
@@ -11,8 +15,13 @@ import { sign } from '@sign/types/sign.type';
 })
 export class SignControlsComponent {
 
-  @Input() type: sign = SIGN_UP
-  @Output() toggleForm: EventEmitter<void> = new EventEmitter<void>()
+  @Input() type: sign = SIGN_UP;
+
+  constructor(
+    private readonly router: Router
+  ) {
+
+  }
 
   get sign(): string {
     return this.isSignin ? 'login' : 'sign up'
@@ -26,8 +35,12 @@ export class SignControlsComponent {
     return this.type === SIGN_IN
   }
 
-  public changeForm() {
-    this.toggleForm.emit()
+  public goPreviousRoute() {
+    this.router.navigateByUrl(this.buildUrlBack())
+  }
+
+  private buildUrlBack(): string {
+    return buildRedirectRoute(`${this.isSignin ? ROUTE_SIGNUP : ROUTE_LOGIN}`)
   }
 
 }

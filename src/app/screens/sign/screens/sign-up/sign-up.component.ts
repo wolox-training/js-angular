@@ -9,10 +9,11 @@ import { PASSWORD } from '@constants/regexp/validations.regexp';
 import { emailMessage, patternMessage, requiredMessage, minLengthMessage } from '@sign/constants/message-validations.constant';
 
 /* Types */
-import { MessagesValidtions } from '@sign/types/sign.type';
+import { MessagesValidtions, sign } from '@sign/types/sign.type';
 
 /* Services */
 import { UserService } from '@services/user/user.service';
+import { SIGN_UP } from '@sign/constants/types.constant';
 
 export const MESSAGES = {
   email: {
@@ -44,8 +45,9 @@ export const MESSAGES = {
 })
 export class SignUpComponent implements OnInit {
 
-  public messages: MessagesValidtions = MESSAGES
+  public messages: MessagesValidtions = MESSAGES;
   public formSignUp!: FormGroup;
+  public readonly signUp: sign = SIGN_UP;
   constructor(
     private readonly fb: FormBuilder,
     /* Services */

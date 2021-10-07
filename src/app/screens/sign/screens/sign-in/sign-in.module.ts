@@ -4,19 +4,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 /* External Modules */
 import { UserServiceModule } from '@services/user/user.service.module';
 import { MessageErrorModule } from '@components/message-error/message-error.module';
+import { SignControlModule } from '@sign/components/sign-controls/sign-controls.module';
 
-/* Components */
-import { SignInComponent } from '@sign/screens/sign-in/sign-in.component';
+/* Routing module */
+import { SignInRoutingModule } from '@sign/screens/sign-in/sign-in-routing.module';
 
 @NgModule({
   declarations: [
-    SignInComponent
+    ...SignInRoutingModule.components
   ],
   imports: [
-    FormsModule, ReactiveFormsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    /* Routing module */
+    SignInRoutingModule,
     /* External Modules Services */
     UserServiceModule,
     MessageErrorModule,
+    SignControlModule,
   ]
 })
 export class SignInModule { }
