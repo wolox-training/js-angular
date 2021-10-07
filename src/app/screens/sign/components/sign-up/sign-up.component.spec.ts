@@ -15,7 +15,8 @@ describe('Sign up component', () => {
   let fixture: ComponentFixture<SignUpComponent>;
   let componentForm: SignUpComponent;
   const createUserMock = jest.fn(() => of())
-  beforeEach(async () => {
+
+  beforeAll(async () => {
     result = await render(SignUpComponent, {
       imports: [ReactiveFormsModule, FormsModule, MessageErrorModule, HttpClientModule],
       providers: [
@@ -66,7 +67,7 @@ describe('Sign up component', () => {
     expect(createUserMock).toHaveBeenCalled()
   })
 
-  test('Should errors when value changed', async () => {
+  test('Should errors when value has changed', async () => {
 
     /* Validation input name */
     const inputControlName = await screen.findByTitle(/^nombre$/i);

@@ -33,6 +33,9 @@
       "@directives/*": [
         "src/app/directives/*"
       ],
+      "@pipes/*": [
+        "src/app/pipes/*"
+      ],
       "@validations/*": [
         "src/app/validations/*"
       ],

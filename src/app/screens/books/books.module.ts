@@ -5,13 +5,18 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 /* External modules */
 import { CompanyNameModule } from '@components/company-name/company-name.module';
 import { HeaderModule } from '@components/header/header.module';
+import { FilterPipeModule } from '@pipes/filter/filter.pipe.module';
 
 /* Routing module */
 import { BooksRoutingModule } from '@books/books-routing.module';
 
+/* Components */
+import { BookComponent } from '@books/components/book/book.component';
+
 @NgModule({
   declarations: [
     ...BooksRoutingModule.componentsUsingRouting,
+    BookComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +24,7 @@ import { BooksRoutingModule } from '@books/books-routing.module';
     /* Routing module */
     BooksRoutingModule,
     /* External modules */
+    FilterPipeModule,
     CompanyNameModule,
     HeaderModule,
   ]
