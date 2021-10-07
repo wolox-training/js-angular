@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { StorageModule } from '@services/storage/storage.module';
+import { StorageServiceModule } from '@services/storage/storage.module';
 
 @NgModule({
   imports: [
-    StorageModule
+    StorageServiceModule
   ]
 })
 export class UnauthGuardModule { }

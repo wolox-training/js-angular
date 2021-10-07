@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { StorageModule } from './storage.module';
+import { StorageServiceModule } from './storage.module';
 
 @Injectable({
-  providedIn: StorageModule
+  providedIn: StorageServiceModule
 })
 export class StorageService {
 
