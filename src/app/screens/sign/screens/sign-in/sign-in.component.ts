@@ -5,9 +5,10 @@ import { takeUntil, finalize } from 'rxjs/operators';
 
 import { UserService } from '@services/user/user.service';
 import { emailMessage, requiredMessage } from '@sign/constants/message-validations.constant';
-import { MessagesValidtions } from '@sign/types/sign.type';
+import { MessagesValidtions, sign } from '@sign/types/sign.type';
 import { Router } from '@angular/router';
 import { buildRedirectRoute, ROUTE_BOOKS } from '@constants/routes';
+import { SIGN_IN } from '@sign/constants/types.constant';
 
 @Component({
   selector: 'wlx-sign-in',
@@ -17,8 +18,9 @@ import { buildRedirectRoute, ROUTE_BOOKS } from '@constants/routes';
 export class SignInComponent implements OnInit, OnDestroy {
 
   public showErrorMessage: boolean = false;
-  public isLogin: boolean = false
+  public isLogin: boolean = false;
   public formSignIn!: FormGroup;
+  public readonly signIn: sign = SIGN_IN;
   public readonly messages: MessagesValidtions = {
     email: {
       ...requiredMessage,

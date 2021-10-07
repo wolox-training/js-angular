@@ -11,7 +11,7 @@
     <wlx-message-error [control]="getControl('password')" [messages]="messages.password">
     </wlx-message-error>
   </div>
-  <ng-content select="[buttons]"></ng-content>
+  <wlx-sign-controls [type]="signIn"></wlx-sign-controls>
   <div [hidden]="!showErrorMessage">
     Credenciales incorrectas
   </div>
