@@ -12,6 +12,7 @@ import { map, mergeMap, tap, } from 'rxjs/operators';
 
 /* Constants */
 import { KEYS_STORAGE } from '@constants/storageKeys';
+import { HEADER_ACCESS_TOKEN, HEADER_CLIENT } from '@constants/headers';
 
 /* External services */
 import { StorageService } from '@services/storage/storage.service';
@@ -22,7 +23,6 @@ import { ResponseLogin } from '@services/user/user.types';
 @Injectable()
 export class LoginInterceptor implements HttpInterceptor {
 
-  private readonly authHeader: string = 'Access-Token'
   constructor(
     public readonly router: Router,
     public readonly storageService: StorageService
@@ -44,7 +44,12 @@ export class LoginInterceptor implements HttpInterceptor {
         return event.clone({ body: newBody });
       }),
       tap((event: HttpResponse<any>) => {
-        this.storageService.localSetItem(KEYS_STORAGE.access_token, event.headers.get(this.authHeader))
+        const accessToken = event.headers.get(HEADER_ACCESS_TOKEN);
+        const client = event.headers.get(HEADER_CLIENT)
+        const body = event.body.data
+        this.storageService.localSetItem(KEYS_STORAGE.access_token, accessToken);
+        this.storageService.localSetItem(KEYS_STORAGE.client, client);
+        this.storageService.localSetItem(KEYS_STORAGE.user, body);
       })
     )
   }

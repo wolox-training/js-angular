@@ -1,0 +1,33 @@
+@import "variables/colors";
+
+.modal {
+  align-items: center;
+  background: $gray-opacity;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all .4s;
+  visibility: hidden;
+
+  .modal__content {
+    background: $white;
+    border-radius: 4px;
+    max-width: 90%;
+    padding: 1em 2em;
+    position: relative;
+    width: 500px;
+  }
+
+  .modal__close {
+    color: $equalizer-grey;
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    top: 10px;
+  }
+}
