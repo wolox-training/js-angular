@@ -30,6 +30,9 @@
       "@components/*": [
         "src/app/components/*"
       ],
+      "@icons/*": [
+        "src/app/components/icons/*",
+      ],
       "@directives/*": [
         "src/app/directives/*"
       ],
