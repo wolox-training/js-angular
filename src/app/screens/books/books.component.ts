@@ -38,8 +38,8 @@ export class BooksComponent implements OnInit, OnDestroy {
   }
 
   public searchBook(searcher: string): fnSearcher {
-    return function (item: number): boolean {
-      return item < Number(searcher)
+    return function (book: Book): boolean {
+      return book?.title.toLowerCase().includes(searcher)
     }
   }
 }

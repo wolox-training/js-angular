@@ -1,0 +1,19 @@
+@import 'variables/colors';
+
+.header {
+  align-items: center;
+  background: $white;
+  border-top: 4px solid $blue-sky;
+  box-shadow: 3px 5px 6px $dark-transparency;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  user-select: none;
+  z-index: 99;
+
+  .actions-header {
+    display: inline-flex;
+    align-items: center;
+  }
+}

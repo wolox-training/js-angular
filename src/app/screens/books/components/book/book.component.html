@@ -1,7 +1,10 @@
 <div class="book">
   <div class="container-book-poster">
-    <img class="book-poster">
+    <img [src]="urlImg" class="book-poster">
   </div>
-  <h3 class="d-block">titulo del libro</h3>
-  <p>autor del libro</p>
+  <h3 class="book-title">{{ title }}</h3>
+  <p class="book-autor">{{ author }}</p>
+  <button type="button" class="btn-add" (click)="addBook()">
+    +
+  </button>
 </div>

@@ -1,6 +1,9 @@
 .list-books {
-  display: flex;
-  flex-wrap: wrap;
-  grid-gap: 20px;
-  justify-content: center;
+  display: block;
+  margin-top: 3rem;
+  text-align: center;
+}
+.container-search {
+  width: 70%;
+  margin: 2rem auto auto;
 }

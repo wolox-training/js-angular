@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 /* External modules */
 import { CompanyNameModule } from '@components/company-name/company-name.module';
-import { HeaderModule } from '@components/header/header.module';
+import { HeaderModule } from '@books/components/header/header.module';
 import { FilterPipeModule } from '@pipes/filter/filter.pipe.module';
 import { ModalModule } from '@components/modal/modal.module';
 
@@ -24,6 +24,7 @@ import { BooksResolver } from '@books/resolvers/books/books.resolver';
 
 /* Services */
 import { BookService } from '@books/services/book/book.service';
+import { ShoppingService } from './services/shopping/shopping.service';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { BookService } from '@books/services/book/book.service';
     },
     BooksResolver,
     BookService,
+    ShoppingService
   ],
   imports: [
     CommonModule,
