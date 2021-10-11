@@ -1,11 +1,15 @@
 import { Component, Input } from '@angular/core';
+
+/* Types */
 import { Book } from '@books/services/book/book.types';
+
+/* Services */
 import { ShoppingService } from '@books/services/shopping/shopping.service';
 
 @Component({
   selector: 'wlx-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  styleUrls: ['./book.component.scss'],
 })
 export class BookComponent {
 
@@ -27,7 +31,15 @@ export class BookComponent {
     return this.book?.author
   }
 
-  public addBook() {
-    this.shoppingCartService.addBook(this.book)
+  get isAddedBook(): boolean {
+    return this.shoppingCartService.isBookSelected(this.book?.id)
+  }
+
+  public addOrRemoveBook() {
+    if (this.isAddedBook) {
+      this.shoppingCartService.removeBook(this.book?.id)
+    } else {
+      this.shoppingCartService.addBook(this.book)
+    }
   }
 }

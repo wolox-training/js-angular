@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { ModalShoppingComponent } from './modal-shopping-cart.component';
+import { CommonModule } from '@angular/common';
 
 /* External modules */
 import { ModalModule } from '@components/modal/modal.module';
-import { CommonModule } from '@angular/common';
+
+/* Components */
+import { ModalShoppingComponent } from '@books/components/modal-shopping-cart/modal-shopping-cart.component';
 
 @NgModule({
   imports: [
