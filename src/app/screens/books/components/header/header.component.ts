@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 /* External services */
 import { StorageService } from '@services/storage/storage.service';
@@ -7,8 +9,8 @@ import { StorageService } from '@services/storage/storage.service';
 /* Constants */
 import { KEYS_STORAGE } from '@constants/storageKeys';
 import { ShoppingService } from '@books/services/shopping/shopping.service';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+
+/* Services */
 import { ModalService } from '@components/modal/modal.service';
 
 @Component({

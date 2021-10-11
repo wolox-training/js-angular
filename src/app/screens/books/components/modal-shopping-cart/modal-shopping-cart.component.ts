@@ -36,4 +36,8 @@ export class ModalShoppingComponent implements OnInit, OnDestroy {
       this.books = books
     })
   }
+
+  public deleteBook(book: Book): void {
+    this.shoppingService.removeBook(book?.id)
+  }
 }

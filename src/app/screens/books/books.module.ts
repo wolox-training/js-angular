@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CompanyNameModule } from '@components/company-name/company-name.module';
 import { HeaderModule } from '@books/components/header/header.module';
 import { FilterPipeModule } from '@pipes/filter/filter.pipe.module';
-import { ModalModule } from '@components/modal/modal.module';
+import { ModalShoppingCartModule } from '@books/components/modal-shopping-cart/modal-shopping-cart.module';
 
 /* Routing module */
 import { BooksRoutingModule } from '@books/books-routing.module';
@@ -53,7 +53,7 @@ import { ShoppingService } from '@books/services/shopping/shopping.service';
     FilterPipeModule,
     CompanyNameModule,
     HeaderModule,
-    ModalModule,
+    ModalShoppingCartModule,
   ]
 })
 export class BooksModule { }

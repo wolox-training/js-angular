@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { ModalService } from './modal.service';
+
+/* Services */
+import { ModalService } from '@components/modal/modal.service';
 
 @Component({
   selector: 'wlx-modal',

@@ -1,12 +1,28 @@
 <wlx-modal>
-  <h2>
+  <h2 class="title-detail">
     tu carrito de compras
   </h2>
   <div class="list-books">
-    <ul>
-      <li *ngFor="let book of books">
-        {{ book.title }} - {{ book.author }} delete
-      </li>
-    </ul>
+    <ng-container *ngIf="books.length > 0; else noItems">
+      <ul>
+        <li *ngFor="let book of books;" class="item-book">
+          {{ book.title }} - {{ book.author }}
+          <span class="material-icons icon-delete" (click)="deleteBook(book)">
+            delete_outline
+          </span>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #noItems>
+      <div class="text-center">
+        <span class="material-icons face-dissatisfied">
+          sentiment_dissatisfied
+        </span>
+        <h2 class="title-detail text-capitalize">
+          tu carrito de compras
+        </h2>
+        <p class="text-capitalize">parece que no tienes items en tu carrito de compras</p>
+      </div>
+    </ng-template>
   </div>
 </wlx-modal>
