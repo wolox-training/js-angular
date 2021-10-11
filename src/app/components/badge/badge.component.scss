@@ -1,0 +1,24 @@
+@import "variables/colors";
+
+.badge {
+  cursor: pointer;
+  padding: 0.2rem;
+  position: relative;
+
+  .badge-notification {
+    align-items: center;
+    background: $danger;
+    border-radius: 50%;
+    color: $white;
+    display: inline-flex;
+    font-size: 9px;
+    height: 18px;
+    justify-content: center;
+    padding: 0.2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(25%, -25%);
+    width: 18px;
+  }
+}

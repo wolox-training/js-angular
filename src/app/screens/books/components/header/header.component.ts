@@ -9,6 +9,7 @@ import { KEYS_STORAGE } from '@constants/storageKeys';
 import { ShoppingService } from '@books/services/shopping/shopping.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ModalService } from '@components/modal/modal.service';
 
 @Component({
   selector: 'wlx-header',
@@ -22,7 +23,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private readonly router: Router,
     private readonly storageService: StorageService,
-    private readonly shoppingService: ShoppingService
+    private readonly shoppingService: ShoppingService,
+    private readonly modalService: ModalService,
   ) { }
 
   ngOnInit() {
@@ -49,5 +51,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public logout(): void {
     this.storageService.localRemoveItem(KEYS_STORAGE.access_token)
     this.router.navigateByUrl('/')
+  }
+
+  public openModal(): void {
+    this.modalService.setVisibleModal(true)
   }
 }

@@ -10,7 +10,7 @@ import { FilterPipeModule } from '@pipes/filter/filter.pipe.module';
 import { ModalModule } from '@components/modal/modal.module';
 
 /* Routing module */
-import { BooksRoutingModule } from './books-routing.module';
+import { BooksRoutingModule } from '@books/books-routing.module';
 
 /* Components */
 import { BookComponent } from '@books/components/book/book.component';
@@ -24,7 +24,9 @@ import { BooksResolver } from '@books/resolvers/books/books.resolver';
 
 /* Services */
 import { BookService } from '@books/services/book/book.service';
-import { ShoppingService } from './services/shopping/shopping.service';
+import { ShoppingService } from '@books/services/shopping/shopping.service';
+
+
 
 @NgModule({
   declarations: [
