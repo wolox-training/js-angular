@@ -4,7 +4,7 @@
     <wlx-badge [sizeNotifications]="sizeBookSelected" (click)="openModal()">
       <wlx-shoping-cart-icon></wlx-shoping-cart-icon>
     </wlx-badge>
-    <button type="button" (click)="logout()" class="btn btn-transparent">Logout</button>
+    <button type="button" (click)="logout()" class="btn btn-transparent">{{ 'LOGOUT' | translate }}</button>
   </div>
 </header>
 <wlx-modal-shopping-cart></wlx-modal-shopping-cart>

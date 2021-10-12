@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LANGUAGES } from '@constants/languages';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'wx-root',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'js-angular';
+  constructor(
+    private readonly translateService: TranslateService
+  ) {
+    this.setDefaultLang()
+  }
+
+  private setDefaultLang() {
+    this.translateService.addLangs(Object.values(LANGUAGES));
+    const browserLang = this.translateService.getBrowserLang();
+    this.translateService.setDefaultLang(browserLang.match(/en|es/) ? browserLang : LANGUAGES.en);
+
+  }
 }

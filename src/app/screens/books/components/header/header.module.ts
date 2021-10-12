@@ -8,6 +8,8 @@ import { CompanyNameModule } from '@components/company-name/company-name.module'
 import { BadgeComponentModule } from '@components/badge/badge.module';
 import { ModalShoppingCartModule } from '@books/components/modal-shopping-cart/modal-shopping-cart.module';
 
+/* Internationalization */
+import { I18nModule } from '@i18n/i18n.module';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -16,7 +18,9 @@ import { ModalShoppingCartModule } from '@books/components/modal-shopping-cart/m
     CompanyNameModule,
     ShoppingCartIconModule,
     BadgeComponentModule,
-    ModalShoppingCartModule
+    ModalShoppingCartModule,
+    I18nModule,
+    I18nModule.forChild()
   ],
   exports: [HeaderComponent]
 })
