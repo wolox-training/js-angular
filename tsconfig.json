@@ -54,6 +54,9 @@
       "@environments/*": [
         "src/environments/*"
       ],
+      "@i18n/*": [
+        "src/app/i18n/*"
+      ]
     }
   },
   "angularCompilerOptions": {

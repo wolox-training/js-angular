@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { UnauthGuardModule } from '@guards/unauth/unauth.guard.module';
 import { AuthGuardModule } from '@guards/auth/auth.guard.module';
 
+/** internationalization */
+import { I18nModule } from '@i18n/i18n.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +20,10 @@ import { AuthGuardModule } from '@guards/auth/auth.guard.module';
     AppRoutingModule,
     /* Guards modules */
     UnauthGuardModule,
-    AuthGuardModule
+    AuthGuardModule,
+    /* Internationalization */
+    I18nModule,
+    I18nModule.forRoot(),
   ],
   bootstrap: [AppComponent]
 })
