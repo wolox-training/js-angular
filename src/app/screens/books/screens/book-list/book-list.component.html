@@ -1,0 +1,8 @@
+<wlx-header></wlx-header>
+<div class="container-search">
+  <input type="text" [(ngModel)]="search" placeholder="Buscar por titulo del libro..."
+    class="input input-block input-bordered">
+</div>
+<div class="list-books padding-container">
+  <wlx-book *ngFor="let book of books | filter:search:searchBook" [book]="book"></wlx-book>
+</div>

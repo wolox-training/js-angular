@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { BookDetailRoutingModule } from './book-detail-routing.module';
 
-
 @NgModule({
   declarations: [
     ...BookDetailRoutingModule.components

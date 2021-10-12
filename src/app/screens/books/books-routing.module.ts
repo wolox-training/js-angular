@@ -15,11 +15,15 @@ const routes: Routes = [
   {
     path: ROUTE_ROOT,
     component: BooksComponent,
-    resolve: {
-      books: BooksResolver
-    },
-    runGuardsAndResolvers: 'always',
     children: [
+      {
+        path: ROUTE_ROOT,
+        loadChildren: () => import('@books/screens/book-list/book-list.module').then(m => m.BookListModule),
+        resolve: {
+          books: BooksResolver
+        },
+        runGuardsAndResolvers: 'always',
+      },
       {
         path: ':id',
         loadChildren: () => import('@books/screens/book-detail/book-detail.module').then(m => m.BookDetailModule),
