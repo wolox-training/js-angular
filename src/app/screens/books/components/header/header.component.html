@@ -1,6 +1,9 @@
 <header class="header padding-container">
   <wlx-company-name size="2"></wlx-company-name>
   <div class="actions-header">
+    <select class="languages" (change)="selectLang(selectLanguages.value)" #selectLanguages>
+      <option [selected]="langSelected === lang" *ngFor="let lang of langs" [value]="lang">{{ lang }}</option>
+    </select>
     <wlx-badge [sizeNotifications]="sizeBookSelected" (click)="openModal()">
       <wlx-shoping-cart-icon></wlx-shoping-cart-icon>
     </wlx-badge>

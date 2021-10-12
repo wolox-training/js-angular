@@ -1,6 +1,6 @@
 <div class="detail padding-container">
   <a routerLink="/books" class="action-back">
-    Atras
+    {{ 'BACK' | translate }}
   </a>
 
   <div class="detail-book">
@@ -13,15 +13,15 @@
       </h2>
 
       <p class="description text-sentece-case">
-        <b>autor del libro</b>:
+        <b>{{ 'AUTHOR' | translate }}</b>:
         <span class="description-info">{{ author }}</span>
       </p>
       <p class="description text-sentece-case">
-        <b>editorial</b>:
+        <b>{{ 'PUBLISHER' | translate }}</b>:
         <span class="description-info">{{ editorial }}</span>
       </p>
       <p class="description text-sentece-case">
-        <b>año de publicación</b>:
+        <b>{{ 'RELEASE_YEAR' | translate }}</b>:
         <span class="description-info">{{ release }}</span>
       </p>
     </div>
