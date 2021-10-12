@@ -1,3 +1,8 @@
 {
-  "LOGOUT": "log out"
+  "LOGOUT": "log out",
+  "SEARCH_BOOK": "Search by book title",
+  "AUTHOR": "author of the book",
+  "PUBLISHER": "publisher",
+  "RELEASE_YEAR": "release year",
+  "BACK": "back"
 }

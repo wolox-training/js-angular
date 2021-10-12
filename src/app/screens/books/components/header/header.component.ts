@@ -12,6 +12,8 @@ import { ShoppingService } from '@books/services/shopping/shopping.service';
 
 /* Services */
 import { ModalService } from '@components/modal/modal.service';
+import { TranslateService } from '@ngx-translate/core';
+import { LANGUAGES } from '@constants/languages';
 
 @Component({
   selector: 'wlx-header',
@@ -21,15 +23,19 @@ import { ModalService } from '@components/modal/modal.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   public sizeBookSelected: number = 0;
+  public langSelected!: string;
+  public readonly langs: string[] = Object.keys(LANGUAGES)
   private readonly $unsubscriber: Subject<boolean> = new Subject()
   constructor(
     private readonly router: Router,
     private readonly storageService: StorageService,
     private readonly shoppingService: ShoppingService,
     private readonly modalService: ModalService,
+    private readonly translationService: TranslateService,
   ) { }
 
   ngOnInit() {
+    this.langSelected = this.translationService.currentLang
     this.listenSizeBooksSelected()
   }
 
@@ -57,5 +63,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   public openModal(): void {
     this.modalService.setVisibleModal(true)
+  }
+
+  public selectLang(lang: string) {
+    this.langSelected = lang
+    this.translationService.use(lang)
   }
 }

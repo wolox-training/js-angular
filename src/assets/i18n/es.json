@@ -1,3 +1,8 @@
 {
-  "LOGOUT": "salir"
+  "LOGOUT": "salir",
+  "SEARCH_BOOK": "Buscar por titulo del libro",
+  "AUTHOR": "autor del libro",
+  "PUBLISHER": "editorial",
+  "RELEASE_YEAR": "año de publicación",
+  "BACK": "atras"
 }
