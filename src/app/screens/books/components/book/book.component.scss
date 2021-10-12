@@ -1,21 +1,20 @@
 @import "variables/colors";
+@import "utils";
 
 .book {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  @include shadow;
+  @include shadow-transition;
+
   display: inline-block;
   height: 100%;
   margin: 10px;
   padding: 1.25rem;
   position: relative;
   text-align: left;
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   width: 300px;
 
-  &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-
   .container-book-poster {
+    cursor: pointer;
     padding-top: 150%;
     position: inherit;
     width: 100%;

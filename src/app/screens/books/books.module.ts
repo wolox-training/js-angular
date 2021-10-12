@@ -21,17 +21,16 @@ import { AuthInterceptor } from '@books/interceptors/auth/auth.interceptor';
 
 /* Resolvers */
 import { BooksResolver } from '@books/resolvers/books/books.resolver';
+import { BookDetailResolver } from '@books/resolvers/book-detail/book-detail.resolver';
 
 /* Services */
 import { BookService } from '@books/services/book/book.service';
 import { ShoppingService } from '@books/services/shopping/shopping.service';
 
-
-
 @NgModule({
   declarations: [
     ...BooksRoutingModule.componentsUsingRouting,
-    BookComponent
+    BookComponent,
   ],
   providers: [
     {
@@ -39,7 +38,10 @@ import { ShoppingService } from '@books/services/shopping/shopping.service';
       useClass: AuthInterceptor,
       multi: true,
     },
+    /* Resolvers */
     BooksResolver,
+    BookDetailResolver,
+    /* Services */
     BookService,
     ShoppingService
   ],

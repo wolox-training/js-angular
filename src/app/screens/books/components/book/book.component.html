@@ -1,5 +1,5 @@
 <div class="book">
-  <div class="container-book-poster">
+  <div class="container-book-poster" [routerLink]="['/books/', book?.id]">
     <img [src]="urlImg" class="book-poster">
   </div>
   <h3 class="book-title">{{ title }}</h3>

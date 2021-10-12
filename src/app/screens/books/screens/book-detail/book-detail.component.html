@@ -1,0 +1,29 @@
+<div class="detail padding-container">
+  <a routerLink="/books" class="action-back">
+    Atras
+  </a>
+
+  <div class="detail-book">
+    <div class="poster-book">
+      <img [src]="urlImg" class="img">
+    </div>
+    <div class="info-book">
+      <h2 class="title-book">
+        <b>{{ title }}</b> <span class="title-genre">({{ genre }})</span>
+      </h2>
+
+      <p class="description text-sentece-case">
+        <b>autor del libro</b>:
+        <span class="description-info">{{ author }}</span>
+      </p>
+      <p class="description text-sentece-case">
+        <b>editorial</b>:
+        <span class="description-info">{{ editorial }}</span>
+      </p>
+      <p class="description text-sentece-case">
+        <b>año de publicación</b>:
+        <span class="description-info">{{ release }}</span>
+      </p>
+    </div>
+  </div>
+</div>

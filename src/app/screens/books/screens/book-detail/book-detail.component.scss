@@ -1,0 +1,57 @@
+@import "utils";
+@import "variables/colors";
+
+.detail {
+  height: auto;
+  min-height: 100vh;
+  padding-top: 5vh;
+
+  .detail-book {
+    @include shadow;
+
+    display: flex;
+    grid-gap: 20px;  
+    padding: 1rem;
+    margin-top: 5vh;
+
+    .poster-book {
+      width: 100%;
+      height: 100%;
+      max-width: 30%;
+    }
+
+    .img {
+      width: 100%;
+    }
+
+    .info-book {
+      width: 100%;
+      max-width: 70%;
+    }
+
+    .title-book {
+      border-bottom: 4px solid $green;
+      display: block;
+      font-size: 2.6rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+    .title-genre {
+      display: inline-block;
+      margin-left: 0.4rem;
+      color: $gray-opacity;
+      font-size: 50%;
+      font-weight: inherit;
+    }
+
+    .description {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+    .description-info {
+      font-size: inherit;
+      color: $gray-opacity;
+    }
+  }
+}

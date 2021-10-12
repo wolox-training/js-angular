@@ -8,7 +8,8 @@ import { BooksComponent } from './books.component';
 import { ROUTE_ROOT } from '@constants/routes';
 
 /* Resolvers */
-import { BooksResolver } from './resolvers/books/books.resolver';
+import { BooksResolver } from '@books/resolvers/books/books.resolver';
+import { BookDetailResolver } from '@books/resolvers/book-detail/book-detail.resolver';
 
 const routes: Routes = [
   {
@@ -18,6 +19,16 @@ const routes: Routes = [
       books: BooksResolver
     },
     runGuardsAndResolvers: 'always',
+    children: [
+      {
+        path: ':id',
+        loadChildren: () => import('@books/screens/book-detail/book-detail.module').then(m => m.BookDetailModule),
+        resolve: {
+          bookDetail: BookDetailResolver
+        },
+        runGuardsAndResolvers: 'always',
+      }
+    ]
   }
 ];
 
